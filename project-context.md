@@ -1,106 +1,53 @@
 # Project Context
 
-> Codex는 이 문서를 프로젝트 구조 파악의 우선 기준으로 사용한다.
-> 특별한 이유가 없으면 프로젝트 전체를 다시 탐색하지 않는다.
+> 프로젝트별 값만 기록한다. 일반 작업 원칙은 `AGENTS.md`와 각 `SKILL.md`에 둔다. 해당 없는 항목은 삭제한다.
 
 ## Project
 - 목적: `<프로젝트 목적>`
-- 주요 기능: `<핵심 기능 요약>`
+- 주요 기능: `<핵심 기능>`
 - 서비스 URL: `<URL>`
 
-## Frontend
-- Framework: `<React / Vue / Next.js / ...>`
-- Language: `<TypeScript / JavaScript>`
-- UI: `<Tailwind / MUI / Bootstrap / ...>`
-- State: `<Zustand / Redux / Pinia / ...>`
-- Package Manager: `<npm / pnpm / yarn>`
+## Stack
+- Frontend: `<framework / language / UI / state / package manager>`
+- Backend: `<framework / language / runtime / build tool>`
+- Database: `<DBMS / ORM 또는 Mapper / migration>`
 
-## Backend
-- Framework: `<Spring Boot / NestJS / Express / ...>`
-- Language: `<Java / Kotlin / TypeScript / ...>`
-- Runtime: `<Java 17 / Node 22 / ...>`
-- Build Tool: `<Gradle / Maven / ...>`
+## Key Paths
+- `<path>` — `<용도>`
+- `<path>` — `<용도>`
+- 공통 UI: `<path>`
+- 인증/권한: `<path와 방식>`
+- API/예외 공통 처리: `<path>`
 
-## Database
-- DBMS: `<PostgreSQL / MySQL / Oracle / ...>`
-- ORM / Mapper: `<JPA / MyBatis / Prisma / ...>`
-- Migration: `<Flyway / Liquibase / ...>`
-
-## Directory Structure
-```text
-/
-├─ <frontend>/      # <설명>
-├─ <backend>/       # <설명>
-├─ <components>/    # <설명>
-├─ <api>/           # <설명>
-├─ <config>/        # <설명>
-└─ <deploy>/        # <설명>
-```
-
-## Authentication
-- 방식: `<Session / JWT / OAuth2 / ...>`
-- 인증 처리 위치: `<경로>`
-- 권한 처리: `<설명>`
-
-## API Rules
-- Base URL: `<예: /api>`
-- 응답 형식: `<공통 응답 구조>`
-- 에러 형식: `<에러 응답 구조>`
-- Naming: `<camelCase / snake_case>`
-- 기타 규칙: `<필요한 규칙>`
-
-## Shared Components
-- `<컴포넌트명>` — `<경로>` — `<용도>`
-- `<컴포넌트명>` — `<경로>` — `<용도>`
-
-새 구현 전에 기존 공통 컴포넌트를 우선 확인하고 재사용한다.
-
-## Environment Variables
-```text
-<ENV_NAME>=<description>
-<ENV_NAME>=<description>
-```
-
-- 로컬 설정 파일: `<.env.local 등>`
-- Production 설정 위치: `<설명>`
+## Conventions
+- API base/응답/에러: `<규칙>`
+- Naming: `<규칙>`
+- 프로젝트 고유 규칙: `<규칙>`
+- 금지 사항: `<규칙>`
 
 ## Commands
-
-### Development
 ```bash
-<개발 실행 명령>
-```
+# development
+<command>
 
-### Test
-```bash
-<테스트 명령>
-```
+# targeted test
+<command>
 
-### Production Build
-```bash
-<production build 명령>
+# full test (필요한 경우)
+<command>
+
+# production build
+<command>
 ```
 
 ## Production
-- Branch: `<main / master / production / ...>`
-- 배포 방식: `<Docker / Jenkins / GitHub Actions / SSH / ...>`
+- Branch: `<branch>`
+- Deploy 방식: `<Jenkins / GitHub Actions / Docker / SSH / ...>`
+- Deploy 명령 또는 workflow: `<command 또는 경로>`
+- Health check: `<URL 또는 명령>`
+- Runtime/Build JVM 등 주의사항: `<예: 운영 Java 8, 빌드 Java 17>`
 
-### Deploy
-```bash
-<배포 명령>
-```
-
-### Health Check
-```text
-<https://example.com/health>
-```
-
-## Architecture Rules
-- 기존 코드/컴포넌트를 우선 재사용한다.
-- 요청 범위 밖의 코드는 수정하지 않는다.
-- 필요 없는 리팩터링을 하지 않는다.
-- 기존 디렉터리 구조와 네이밍 규칙을 유지한다.
-- API/DB 변경 시 기존 호환성을 우선한다.
-- 새로운 라이브러리는 필요한 경우에만 추가한다.
-- `<프로젝트 고유 아키텍처 규칙>`
-- `<프로젝트 고유 금지 사항>`
+## Environment
+- 로컬 설정: `<경로>`
+- 운영 설정: `<경로 또는 관리 방식>`
+- 필수 변수 이름: `<SECRET 값이 아닌 변수명만>`
