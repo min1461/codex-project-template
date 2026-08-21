@@ -57,6 +57,15 @@ null / 빈 문자열 / 빈 List 의미는 기존 API 규칙을 따른다.
 DB 변경 최소화 우선순위:
 `기존 Column → 기존 Query 최소 수정 → 기존 Table → 필요한 경우에만 Schema 변경`
 
+테이블 명명 규칙:
+- 논리 테이블명은 대문자 스네이크 케이스 `TB_{업무영역}_{대상}` 형식을 사용한다.
+- `TB`는 테이블 고정 접두어이며, 업무영역과 대상 약어는 프로젝트에서 정한 의미를 일관되게 재사용한다.
+- 공통 약어 예시: `COM`(공통), `USER`(유저·회원·관리자), `CD`(코드), `INFO`(정보), `ROLE`(권한).
+- 예시: `TB_COM_CD`, `TB_USER_INFO`, `TB_USER_ROLE`.
+- PostgreSQL에서는 따옴표 없는 식별자가 소문자로 저장되므로 물리명과 SQL에는 `tb_com_cd`, `tb_user_info`, `tb_user_role`처럼 소문자를 사용하고, 대문자 보존을 위한 quoted identifier는 사용하지 않는다.
+- 같은 의미의 약어를 우선 재사용하고, 필요한 의미를 표현할 수 없을 때만 새 약어를 추가한다.
+- 기존 테이블은 이 규칙을 맞추기 위한 목적으로만 이름을 변경하지 않는다.
+
 Schema 변경 시 NOT NULL / DEFAULT / INDEX / FK / migration / backward compatibility를 확인한다.
 
 ## Query / Repository
