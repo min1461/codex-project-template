@@ -1,3 +1,8 @@
+---
+name: testing
+description: Select and run proportionate tests and verification for frontend, backend, security, data, and deployment changes.
+---
+
 # Testing Skill
 
 ## Goal

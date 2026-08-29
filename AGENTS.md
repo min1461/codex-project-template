@@ -53,14 +53,14 @@ Codex 토큰 사용량과 불필요한 탐색을 최소화하면서 요청 범�
 - 외부 시스템 쓰기, 자격 증명, 유료 작업처럼 승인 경계가 있는 작업은 사용자 확인 후 진행한다.
 
 ## Skill Routing
-- Frontend 기능·상태·라우팅·API 연동 → `frontend/SKILL.md`
-- Frontend 디자인/UI 작업 → `frontend-design/SKILL.md`
-- Backend 작업 → `backend/SKILL.md`
-- Database·마이그레이션·Query 작업 → `database/SKILL.md`
-- 인증·권한·비밀정보·보안 검토 → `security/SKILL.md`
-- 테스트/검증 작업 → `testing/SKILL.md`
-- 배포 전 검토 → `review/SKILL.md`
-- 사용자가 `배포해줘`, `deploy 해줘`, `운영에 반영해줘`, `배포 진행해줘`라고 요청 → `deploy/SKILL.md`
+- Frontend 기능·상태·라우팅·API 연동 → `skills/frontend/SKILL.md`
+- Frontend 디자인/UI 작업 → `skills/frontend-design/SKILL.md`
+- Backend 작업 → `skills/backend/SKILL.md`
+- Database·마이그레이션·Query 작업 → `skills/database/SKILL.md`
+- 인증·권한·비밀정보·보안 검토 → `skills/security/SKILL.md`
+- 테스트/검증 작업 → `skills/testing/SKILL.md`
+- 배포 전 검토 → `skills/review/SKILL.md`
+- 사용자가 `배포해줘`, `deploy 해줘`, `운영에 반영해줘`, `배포 진행해줘`라고 요청 → `skills/deploy/SKILL.md`
 
 ## Deploy Pipeline
 배포는 반드시 다음 순서로 수행한다.

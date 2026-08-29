@@ -1,3 +1,8 @@
+---
+name: review
+description: Review current changes for production-blocking defects before deployment without expanding into unrelated refactoring.
+---
+
 # Review Skill
 
 ## Goal

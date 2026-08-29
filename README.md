@@ -11,22 +11,23 @@
 │  └─ config.toml          # 기본 모델·하위 에이전트 설정
 ├─ AGENTS.md               # 작업·모델·검증 운영 원칙
 ├─ project-context.md
-├─ frontend/
-│  └─ SKILL.md
-├─ frontend-design/
-│  └─ SKILL.md
-├─ backend/
-│  └─ SKILL.md
-├─ database/
-│  └─ SKILL.md
-├─ security/
-│  └─ SKILL.md
-├─ testing/
-│  └─ SKILL.md
-├─ review/
-│  └─ SKILL.md
-└─ deploy/
-   └─ SKILL.md
+└─ skills/
+   ├─ frontend/
+   │  └─ SKILL.md
+   ├─ frontend-design/
+   │  └─ SKILL.md
+   ├─ backend/
+   │  └─ SKILL.md
+   ├─ database/
+   │  └─ SKILL.md
+   ├─ security/
+   │  └─ SKILL.md
+   ├─ testing/
+   │  └─ SKILL.md
+   ├─ review/
+   │  └─ SKILL.md
+   └─ deploy/
+      └─ SKILL.md
 ```
 
 ## Usage
@@ -74,14 +75,14 @@
 
 ## Skill Routing
 
-- Frontend 기능·상태·라우팅·API 연동 → `frontend/SKILL.md`
-- Frontend/UI → `frontend-design/SKILL.md`
-- Backend → `backend/SKILL.md`
-- Database·Migration·Query → `database/SKILL.md`
-- Security·인증·권한 → `security/SKILL.md`
-- Test → `testing/SKILL.md`
-- Pre-deploy Review → `review/SKILL.md`
-- Deploy → `deploy/SKILL.md`
+- Frontend 기능·상태·라우팅·API 연동 → `skills/frontend/SKILL.md`
+- Frontend/UI → `skills/frontend-design/SKILL.md`
+- Backend → `skills/backend/SKILL.md`
+- Database·Migration·Query → `skills/database/SKILL.md`
+- Security·인증·권한 → `skills/security/SKILL.md`
+- Test → `skills/testing/SKILL.md`
+- Pre-deploy Review → `skills/review/SKILL.md`
+- Deploy → `skills/deploy/SKILL.md`
 
 ## Deployment Gate
 
