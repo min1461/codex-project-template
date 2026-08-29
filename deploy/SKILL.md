@@ -1,3 +1,8 @@
+---
+name: deploy
+description: Build, containerize, and deploy the application using Docker, Docker Compose, Nginx, AWS, Cloudflare, GitHub, and GitHub Actions.
+---
+
 # Deploy Skill
 
 ## Trigger
@@ -6,6 +11,11 @@
 - deploy 해줘
 - 운영에 반영해줘
 - 배포 진행해줘
+
+## Confirmed Technology Baseline
+
+Use Docker, Docker Compose, Nginx, AWS EC2, AWS RDS PostgreSQL, Cloudflare, GitHub, and GitHub Actions. Do not introduce Kubernetes without a demonstrated need and explicit user approval.
+
 
 ## Pipeline
 반드시 다음 순서:

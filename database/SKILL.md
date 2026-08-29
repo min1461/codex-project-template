@@ -1,7 +1,17 @@
+---
+name: database
+description: Design and review PostgreSQL schemas, Flyway migrations, JPA persistence, SQL queries, constraints, and database safety.
+---
+
 # Database Skill
 
 ## Goal
 기존 스키마, 명명 규칙, 마이그레이션 방식, ORM/Query 패턴을 유지하면서 데이터 무결성과 호환성을 해치지 않는 최소 변경을 수행한다.
+
+## Confirmed Technology Baseline
+
+Use PostgreSQL with Spring Data JPA, Hibernate, and Flyway migrations. Default new schema names to snake_case while preserving established project naming and migration conventions.
+
 
 ## Explore
 `project-context.md → 관련 Schema/Migration → Entity/Model → Repository/Mapper → 관련 Query → 영향받는 Test → 구현`

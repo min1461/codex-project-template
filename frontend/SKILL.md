@@ -1,7 +1,17 @@
+---
+name: frontend
+description: Implement and review React frontend behavior, including components, routing, state, API integration, forms, and frontend tests.
+---
+
 # Frontend Engineering Skill
 
 ## Goal
 기존 프론트엔드 구조와 사용자 흐름을 유지하면서 화면 동작, 상태, 라우팅, API 연동을 최소 범위로 구현한다.
+
+## Confirmed Technology Baseline
+
+Use React, JavaScript, Vite, React Router, Zustand, Axios, Tailwind CSS, shadcn/ui, Vitest, and Playwright. Do not convert the project to TypeScript without explicit user approval.
+
 
 ## Explore
 `project-context.md → 대상 화면/Route → 관련 Component → API Client → State/Store → 관련 Test → 유사 구현 1~2개 → 구현`

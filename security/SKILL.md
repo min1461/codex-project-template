@@ -1,7 +1,17 @@
+---
+name: security
+description: Implement and review Spring Security, JWT authentication, authorization, secrets, input validation, CORS, CSRF, and application security risks.
+---
+
 # Security Skill
 
 ## Goal
 현재 인증·권한·입력 검증·비밀정보 관리 방식을 유지하면서 현실적인 보안 위험을 필요한 범위에서 예방하고 검증한다.
+
+## Confirmed Technology Baseline
+
+Use Spring Security with verified JWT access and refresh tokens. Hash passwords with BCrypt or an approved Spring Security encoder, keep refresh tokens revocable, and avoid long-lived sensitive token storage in localStorage.
+
 
 ## Scope
 다음 작업에 적용한다.

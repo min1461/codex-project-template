@@ -1,8 +1,18 @@
+---
+name: frontend-design
+description: Design and improve React user interfaces, including Tailwind and shadcn/ui styling, responsive layouts, accessibility, and visual QA.
+---
+
 # Frontend Design Skill
 
 ## Goal
 기능만 동작하는 개발자 화면이 아니라 실제 서비스에 배포 가능한 수준의 UI/UX를 구현한다.
 획일적인 SaaS Dashboard 스타일을 강제하지 않고 서비스 목적, 업종, 사용자, 기존 디자인 언어를 따른다.
+
+## Confirmed Technology Baseline
+
+Use Tailwind CSS and shadcn/ui for the default component system. Do not add MUI, Ant Design, Bootstrap, or another UI framework unless the user explicitly requests it.
+
 
 ## Explore
 1. `project-context.md`

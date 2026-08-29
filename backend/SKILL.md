@@ -1,7 +1,17 @@
+---
+name: backend
+description: Implement and review Java Spring Boot backend work, including REST APIs, services, persistence, validation, and backend tests.
+---
+
 # Backend Skill
 
 ## Goal
 기존 프로젝트 구조와 구현 방식을 유지하면서 안전하고 최소 범위로 백엔드 기능을 구현한다.
+
+## Confirmed Technology Baseline
+
+Use Java 25, Spring Boot 4, Gradle, Spring MVC, Spring Security, Spring Data JPA, Hibernate, PostgreSQL, JWT, and Swagger/OpenAPI. Do not replace this stack without explicit user approval.
+
 
 ## Explore
 `project-context.md → 대상 API → Service → Repository/Mapper → 관련 Model → 유사 구현 1~2개 → 구현`
