@@ -9,8 +9,12 @@
 /
 ├─ .codex/
 │  └─ config.toml          # 기본 모델·하위 에이전트 설정
+├─ .githooks/
+│  └─ post-merge           # git pull 후 전역 스킬 자동 동기화
 ├─ AGENTS.md               # 작업·모델·검증 운영 원칙
 ├─ project-context.md
+├─ sync-skills.ps1
+├─ enable-auto-sync.ps1
 └─ skills/
    ├─ frontend/
    │  └─ SKILL.md
@@ -65,6 +69,22 @@ CPT의 skills/를 각 PC의 전역 Codex 스킬 폴더에 반영하려면, git p
     .\sync-skills.ps1 -WhatIf
 
 템플릿에 있는 스킬 파일은 갱신하지만, 템플릿에 없는 전역 스킬은 삭제하지 않습니다.
+
+## Automatically Sync Skills After Git Pull
+
+자동 동기화는 PC별로 한 번만 설정합니다. 저장소 루트에서 다음을 실행하면 현재 클론에만 `post-merge` Git hook을 연결하고, 즉시 스킬도 한 번 동기화합니다.
+
+    .\enable-auto-sync.ps1
+
+그 뒤부터는 아래 명령만으로 CPT와 전역 Codex 스킬이 함께 최신화됩니다.
+
+    git pull
+
+Git 보안 정책상 새 PC에서 `git pull`만으로 hook을 자동 활성화할 수는 없습니다. 따라서 데스크톱과 노트북에서 각각 한 번씩 `.\enable-auto-sync.ps1`를 실행해야 합니다.
+
+변경 예정만 확인하려면 다음을 사용합니다.
+
+    .\enable-auto-sync.ps1 -WhatIf
 
 ## Rule Ownership
 

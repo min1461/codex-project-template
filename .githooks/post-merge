@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+set -eu
+
+repo_root="$(git rev-parse --show-toplevel 2>/dev/null || true)"
+
+if [ -z "$repo_root" ]; then
+  exit 0
+fi
+
+if ! powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$repo_root/sync-skills.ps1"; then
+  echo "CPT Codex skill synchronization failed." >&2
+  exit 1
+fi
+
