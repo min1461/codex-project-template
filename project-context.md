@@ -9,22 +9,22 @@
 - 서비스 URL: `<URL>`
 
 ## Frontend
-- Framework: `<React / Vue / Next.js / ...>`
-- Language: `<TypeScript / JavaScript>`
-- UI: `<Tailwind / MUI / Bootstrap / ...>`
-- State: `<Zustand / Redux / Pinia / ...>`
-- Package Manager: `<npm / pnpm / yarn>`
+- Framework: `React`
+- Language: `JavaScript`
+- UI: `Tailwind CSS + shadcn/ui`
+- State: `Zustand`
+- Package Manager: `npm`
 
 ## Backend
-- Framework: `<Spring Boot / NestJS / Express / ...>`
-- Language: `<Java / Kotlin / TypeScript / ...>`
-- Runtime: `<Java 17 / Node 22 / ...>`
-- Build Tool: `<Gradle / Maven / ...>`
+- Framework: `Spring Boot 4`
+- Language: `Java 25`
+- Runtime: `JVM / Java 25`
+- Build Tool: `Gradle`
 
 ## Database
-- DBMS: `<PostgreSQL / MySQL / Oracle / ...>`
-- ORM / Mapper: `<JPA / MyBatis / Prisma / ...>`
-- Migration: `<Flyway / Liquibase / ...>`
+- DBMS: `PostgreSQL`
+- ORM / Mapper: `Spring Data JPA + Hibernate`
+- Migration: `Flyway`
 
 ## Directory Structure
 ```text
@@ -38,12 +38,12 @@
 ```
 
 ## Authentication
-- 방식: `<Session / JWT / OAuth2 / ...>`
-- 인증 처리 위치: `<경로>`
-- 권한 처리: `<설명>`
+- 방식: `JWT (Access Token + Refresh Token)`
+- 인증 처리 위치: `Spring Security`
+- 권한 처리: `Spring Security role/permission and ownership checks on the backend`
 
 ## API Rules
-- Base URL: `<예: /api>`
+- Base URL: `/api`
 - 응답 형식: `<공통 응답 구조>`
 - 에러 형식: `<에러 응답 구조>`
 - Naming: `<camelCase / snake_case>`
@@ -82,8 +82,8 @@
 ```
 
 ## Production
-- Branch: `<main / master / production / ...>`
-- 배포 방식: `<Docker / Jenkins / GitHub Actions / SSH / ...>`
+- Branch: `main`
+- 배포 방식: `Docker, Docker Compose, Nginx, AWS EC2/RDS, Cloudflare, GitHub Actions`
 
 ### Deploy
 ```bash
@@ -104,3 +104,4 @@
 - 새로운 라이브러리는 필요한 경우에만 추가한다.
 - `<프로젝트 고유 아키텍처 규칙>`
 - `<프로젝트 고유 금지 사항>`
+- 기본 스택을 대체하는 프레임워크, DB, 빌드 도구, 클라우드 공급자는 명확한 이유와 사용자 승인 없이 도입하지 않는다.
