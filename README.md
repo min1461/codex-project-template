@@ -11,9 +11,15 @@
 │  └─ config.toml          # 기본 모델·하위 에이전트 설정
 ├─ AGENTS.md               # 작업·모델·검증 운영 원칙
 ├─ project-context.md
+├─ frontend/
+│  └─ SKILL.md
 ├─ frontend-design/
 │  └─ SKILL.md
 ├─ backend/
+│  └─ SKILL.md
+├─ database/
+│  └─ SKILL.md
+├─ security/
 │  └─ SKILL.md
 ├─ testing/
 │  └─ SKILL.md
@@ -44,6 +50,16 @@
 `AGENTS.md`는 가능한 한 짧게 유지하고,
 세부 규칙은 각 `SKILL.md`에 둡니다.
 
+## Rule Ownership
+
+- `AGENTS.md`: 모든 작업에 적용하는 최소 범위, 안전, 검증, 스킬 라우팅 규칙
+- `project-context.md`: 프로젝트별 실제 기술 스택, 명령, 구조, 배포 정보, 고유 규칙
+- 각 `SKILL.md`: Frontend, UI, Backend, Database, Security, Test, Review, Deploy의 작업별 세부 규칙
+- `.codex/config.toml`: 새 작업과 하위 에이전트의 기본 모델·추론 수준
+
+프로젝트가 특정 기술 스택으로 고정되어 있다면 해당 사실은 범용 `AGENTS.md`가 아니라
+`project-context.md`와 관련 `SKILL.md`에 기록합니다.
+
 ## Token-Efficient Workflow
 
 - 긴 대화는 PM·결정 기록 용도로만 사용하고, 실제 구현은 기능 또는 화면 단위의 새 작업으로 분리합니다.
@@ -58,8 +74,11 @@
 
 ## Skill Routing
 
+- Frontend 기능·상태·라우팅·API 연동 → `frontend/SKILL.md`
 - Frontend/UI → `frontend-design/SKILL.md`
 - Backend → `backend/SKILL.md`
+- Database·Migration·Query → `database/SKILL.md`
+- Security·인증·권한 → `security/SKILL.md`
 - Test → `testing/SKILL.md`
 - Pre-deploy Review → `review/SKILL.md`
 - Deploy → `deploy/SKILL.md`
