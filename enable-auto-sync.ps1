@@ -1,6 +1,7 @@
 [CmdletBinding(SupportsShouldProcess = $true, ConfirmImpact = 'Medium')]
 param(
-    [string]$CodexHome = (Join-Path $env:USERPROFILE '.codex')
+    [string]$CodexHome = (Join-Path $env:USERPROFILE '.codex'),
+    [string[]]$Skills
 )
 
 Set-StrictMode -Version Latest
@@ -33,8 +34,30 @@ if ($PSCmdlet.ShouldProcess($repoRoot, 'Configure this checkout to use the track
     }
 }
 
+if ($PSBoundParameters.ContainsKey('Skills')) {
+    $selectedSkillNames = @($Skills | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | ForEach-Object { $_.Trim() } | Select-Object -Unique)
+    if ($selectedSkillNames.Count -eq 0) {
+        throw 'Specify at least one skill when using -Skills.'
+    }
+    if ($PSCmdlet.ShouldProcess($repoRoot, "Remember selected skills: $($selectedSkillNames -join ', ')")) {
+        & git -C $repoRoot config --local codex-template.skills ($selectedSkillNames -join ',')
+        if ($LASTEXITCODE -ne 0) {
+            throw 'Failed to save the selected skills in local Git configuration.'
+        }
+    }
+}
+
 if ($PSCmdlet.ShouldProcess($CodexHome, 'Synchronize CPT skills now')) {
-    & $syncScript -CodexHome $CodexHome
+    $syncArguments = @{
+        CodexHome = $CodexHome
+    }
+    if ($WhatIfPreference) {
+        $syncArguments.WhatIf = $true
+    }
+    if ($PSBoundParameters.ContainsKey('Skills')) {
+        $syncArguments.Skills = $Skills
+    }
+    & $syncScript @syncArguments
 }
 
 [PSCustomObject]@{
@@ -42,5 +65,6 @@ if ($PSCmdlet.ShouldProcess($CodexHome, 'Synchronize CPT skills now')) {
     HooksPath  = '.githooks'
     Hook       = $hook
     CodexHome  = $CodexHome
+    Skills     = if ($PSBoundParameters.ContainsKey('Skills')) { $selectedSkillNames -join ', ' } else { 'All (or existing local selection)' }
     Mode       = if ($WhatIfPreference) { 'WhatIf' } else { 'Enabled' }
 }

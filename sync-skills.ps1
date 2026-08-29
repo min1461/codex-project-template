@@ -1,6 +1,7 @@
 [CmdletBinding(SupportsShouldProcess = $true, ConfirmImpact = 'Medium')]
 param(
-    [string]$CodexHome = (Join-Path $env:USERPROFILE '.codex')
+    [string]$CodexHome = (Join-Path $env:USERPROFILE '.codex'),
+    [string[]]$Skills
 )
 
 Set-StrictMode -Version Latest
@@ -21,6 +22,27 @@ $skillFolders = @(
 if ($skillFolders.Count -eq 0) {
     throw "No skill folders containing SKILL.md were found in: $sourceRoot"
 }
+
+$availableSkillNames = @($skillFolders.Name)
+if ($PSBoundParameters.ContainsKey('Skills')) {
+    $selectedSkillNames = @($Skills | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | ForEach-Object { $_.Trim() } | Select-Object -Unique)
+}
+else {
+    $configuredSkills = (& git -C $PSScriptRoot config --local --get codex-template.skills 2>$null)
+    $selectedSkillNames = if ([string]::IsNullOrWhiteSpace($configuredSkills)) {
+        $availableSkillNames
+    }
+    else {
+        @($configuredSkills -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ })
+    }
+}
+
+$unknownSkillNames = @($selectedSkillNames | Where-Object { $_ -notin $availableSkillNames })
+if ($unknownSkillNames.Count -gt 0) {
+    throw "Unknown skill name(s): $($unknownSkillNames -join ', '). Available skills: $($availableSkillNames -join ', ')"
+}
+
+$skillFolders = @($skillFolders | Where-Object { $_.Name -in $selectedSkillNames })
 
 if (-not (Test-Path -LiteralPath $destinationRoot -PathType Container)) {
     if ($PSCmdlet.ShouldProcess($destinationRoot, 'Create Codex skill folder')) {

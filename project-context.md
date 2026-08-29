@@ -11,6 +11,13 @@
 
 > `profiles/`의 해당 유형 문서를 복사해 시작할 수 있다. 이 파일의 실제 기술 스택과 명령이 공통 Skill의 예시보다 우선한다.
 
+## Codex Skills
+- 전역 동기화: `<미확인 / 하지 않음 / 선택 동기화>`
+- 이 프로젝트에서 사용할 스킬: `<frontend, testing 등 / 없음>`
+- 선택 근거: `<기술 스택 및 작업 범위>`
+
+새 프로젝트·템플릿 적용 시에는 다른 설정 전에 이 항목을 먼저 사용자와 확인한다. 전역으로 설치되어 있더라도 여기에 없는 스킬 규칙을 이 프로젝트에 자동 적용하지 않는다.
+
 ## Frontend
 - Framework: `React`
 - Language: `JavaScript`
@@ -44,6 +51,15 @@
 - 방식: `JWT (Access Token + Refresh Token)`
 - 인증 처리 위치: `Spring Security`
 - 권한 처리: `Spring Security role/permission and ownership checks on the backend`
+
+## Static File Exposure
+- 기본 정책: `<기본 차단 / 공개 허용 목록 방식>`
+- 공개 경로: `<예: /assets/**, /favicon.ico, /robots.txt>`
+- 차단 경로 및 파일: `<예: .env, .git/**, application-*.yml, 백업·로그·업로드 원본>`
+- 적용 위치: `<Nginx / CDN / Spring Security / 정적 파일 서버>`
+- 검증: `차단 대상은 403 또는 404를 반환하고, 공개 허용 경로만 정상 응답한다.`
+
+정적 파일·디렉터리는 공개 필요성이 명확한 경로만 허용한다. 소스, 설정, 비밀정보, 백업, 로그, 내부 업로드 원본은 웹 경로로 노출하지 않는다.
 
 ## API Rules
 - Base URL: `/api`
@@ -110,3 +126,4 @@
 - `<프로젝트 고유 아키텍처 규칙>`
 - `<프로젝트 고유 금지 사항>`
 - 기본 스택을 대체하는 프레임워크, DB, 빌드 도구, 클라우드 공급자는 명확한 이유와 사용자 승인 없이 도입하지 않는다.
+- 정적 파일 공개는 `Static File Exposure`의 공개 경로만 허용하며, 민감 파일 또는 내부 디렉터리를 정적 경로에 매핑하지 않는다.

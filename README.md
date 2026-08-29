@@ -39,7 +39,22 @@
 
 ## Usage
 
-새 프로젝트를 시작할 때 이 저장소를 복사한 뒤 `project-context.md`의 실제 값만 채웁니다.
+새 프로젝트를 시작할 때는 **무엇보다 먼저 전역 스킬 동기화가 필요한지와 필요한 스킬 범위부터 결정**합니다. 프로젝트에 필요하지 않은 기술 스킬을 일괄 동기화하지 않아도 됩니다.
+
+권장 절차:
+
+1. Codex에 프로젝트 목적과 기술 스택을 설명하고, 사용할 스킬을 먼저 정합니다.
+2. 필요한 스킬만 전역으로 동기화할지 결정합니다. 동기화하지 않아도 프로젝트 문서 작성과 일반 작업은 가능합니다.
+3. 이 저장소를 프로젝트에 복사한 뒤 `project-context.md`의 `Codex Skills` 항목과 실제 기술 스택을 채웁니다. 이 목록이 해당 프로젝트에서 적용할 스킬 기준입니다.
+4. 선택 동기화를 원하면 아래 명령으로 자동 동기화까지 설정합니다.
+
+    .\enable-auto-sync.ps1 -Skills frontend,frontend-design,testing
+
+사용 가능한 스킬: `frontend`, `frontend-design`, `backend`, `database`, `security`, `testing`, `review`, `deploy`
+
+이 선택은 현재 클론의 로컬 Git 설정에 저장됩니다. 이후 `git pull`을 실행하면 선택한 스킬만 다시 동기화됩니다.
+
+전역 스킬 폴더는 PC 공용이라, 이미 설치된 다른 스킬을 프로젝트별로 자동 삭제하지는 않습니다. 프로젝트별 적용 범위는 반드시 `project-context.md`의 `Codex Skills` 목록으로 관리합니다.
 
 Formly처럼 운영 플랫폼과 고객 사이트의 배포 경계가 다른 경우에는 `profiles/`에서 맞는 유형을 골라 해당 `project-context.md`와 `.env.example`를 프로젝트에 복사한 뒤 실제 값으로 채웁니다. 프로필의 값은 출발점이며, 실제 프로젝트의 기존 설정이 우선입니다.
 
@@ -68,6 +83,10 @@ CPT의 skills/를 각 PC의 전역 Codex 스킬 폴더에 반영하려면, git p
 
     .\sync-skills.ps1
 
+필요한 스킬만 한 번 동기화하려면 다음처럼 이름을 지정합니다.
+
+    .\sync-skills.ps1 -Skills frontend,frontend-design,testing
+
 기본 대상은 현재 Windows 사용자의 C:\Users\<사용자>\.codex\skills입니다. 따라서 데스크톱과 노트북에서 같은 명령을 실행해도 각자의 Codex 홈으로 동기화됩니다.
 
 대상을 명시하거나 변경 예정만 확인하려면 다음을 사용합니다.
@@ -79,9 +98,9 @@ CPT의 skills/를 각 PC의 전역 Codex 스킬 폴더에 반영하려면, git p
 
 ## Automatically Sync Skills After Git Pull
 
-자동 동기화는 PC별로 한 번만 설정합니다. 저장소 루트에서 다음을 실행하면 현재 클론에만 `post-merge` Git hook을 연결하고, 즉시 스킬도 한 번 동기화합니다.
+자동 동기화는 PC별로 한 번만 설정합니다. 먼저 필요한 스킬을 정한 뒤, 저장소 루트에서 다음을 실행하면 현재 클론에만 `post-merge` Git hook을 연결하고 즉시 선택한 스킬을 한 번 동기화합니다.
 
-    .\enable-auto-sync.ps1
+    .\enable-auto-sync.ps1 -Skills frontend,frontend-design,testing
 
 그 뒤부터는 아래 명령만으로 CPT와 전역 Codex 스킬이 함께 최신화됩니다.
 
