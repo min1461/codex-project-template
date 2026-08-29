@@ -51,6 +51,21 @@
 `AGENTS.md`는 가능한 한 짧게 유지하고,
 세부 규칙은 각 `SKILL.md`에 둡니다.
 
+## Sync Global Codex Skills
+
+CPT의 skills/를 각 PC의 전역 Codex 스킬 폴더에 반영하려면, git pull 후 저장소 루트에서 실행합니다.
+
+    .\sync-skills.ps1
+
+기본 대상은 현재 Windows 사용자의 C:\Users\<사용자>\.codex\skills입니다. 따라서 데스크톱과 노트북에서 같은 명령을 실행해도 각자의 Codex 홈으로 동기화됩니다.
+
+대상을 명시하거나 변경 예정만 확인하려면 다음을 사용합니다.
+
+    .\sync-skills.ps1 -CodexHome 'C:\Users\kai\.codex'
+    .\sync-skills.ps1 -WhatIf
+
+템플릿에 있는 스킬 파일은 갱신하지만, 템플릿에 없는 전역 스킬은 삭제하지 않습니다.
+
 ## Rule Ownership
 
 - `AGENTS.md`: 모든 작업에 적용하는 최소 범위, 안전, 검증, 스킬 라우팅 규칙
