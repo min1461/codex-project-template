@@ -11,4 +11,3 @@ if ! powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$repo_root/sync-sk
   echo "CPT Codex skill synchronization failed." >&2
   exit 1
 fi
-

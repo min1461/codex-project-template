@@ -44,4 +44,3 @@ if ($PSCmdlet.ShouldProcess($CodexHome, 'Synchronize CPT skills now')) {
     CodexHome  = $CodexHome
     Mode       = if ($WhatIfPreference) { 'WhatIf' } else { 'Enabled' }
 }
-
