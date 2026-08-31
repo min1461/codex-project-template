@@ -13,6 +13,9 @@
 │  └─ post-merge           # git pull 후 전역 스킬 자동 동기화
 ├─ AGENTS.md               # 작업·모델·검증 운영 원칙
 ├─ project-context.md
+├─ profiles/
+│  ├─ formly-platform/      # 주문·AI·CMS·배포 관리 플랫폼 예시
+│  └─ formly-customer-site/ # 고객 도메인에 독립 배포하는 사이트 예시
 ├─ sync-skills.ps1
 ├─ enable-auto-sync.ps1
 └─ skills/
@@ -38,6 +41,8 @@
 
 새 프로젝트를 시작할 때 이 저장소를 복사한 뒤 `project-context.md`의 실제 값만 채웁니다.
 
+Formly처럼 운영 플랫폼과 고객 사이트의 배포 경계가 다른 경우에는 `profiles/`에서 맞는 유형을 골라 해당 `project-context.md`와 `.env.example`를 프로젝트에 복사한 뒤 실제 값으로 채웁니다. 프로필의 값은 출발점이며, 실제 프로젝트의 기존 설정이 우선입니다.
+
 반드시 프로젝트별로 확인할 항목:
 
 - Frontend / Backend 기술 스택
@@ -50,6 +55,8 @@
 - production branch
 - 배포 방식/명령
 - health check URL
+
+환경변수에는 실제 키나 비밀번호를 넣지 않습니다. `.env.example`에는 변수 이름과 용도만 기록하고, 비밀값은 로컬 환경 또는 CI/CD Secret에 저장합니다.
 - 프로젝트 고유 아키텍처 규칙
 
 `AGENTS.md`는 가능한 한 짧게 유지하고,
