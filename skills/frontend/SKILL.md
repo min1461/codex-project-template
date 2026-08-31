@@ -1,6 +1,6 @@
 ---
 name: frontend
-description: Implement and review React frontend behavior, including components, routing, state, API integration, forms, and frontend tests.
+description: Implement and review web frontend behavior, including React or Next.js components, routing, state, API integration, forms, and tests.
 ---
 
 # Frontend Engineering Skill
@@ -8,9 +8,13 @@ description: Implement and review React frontend behavior, including components,
 ## Goal
 기존 프론트엔드 구조와 사용자 흐름을 유지하면서 화면 동작, 상태, 라우팅, API 연동을 최소 범위로 구현한다.
 
-## Confirmed Technology Baseline
+## Technology Baseline
 
-Use React, JavaScript, Vite, React Router, Zustand, Axios, Tailwind CSS, shadcn/ui, Vitest, and Playwright. Do not convert the project to TypeScript without explicit user approval.
+`project-context.md`에 적힌 프레임워크, 언어, 라우팅, 상태 관리, 테스트 도구를 따른다. 컨텍스트가 비어 있으면 기존 소스와 설정 파일을 확인한 뒤 필요한 최소 범위만 사용한다.
+
+- React/Vite 프로젝트: 기존 React Router와 클라이언트 상태 관리 방식을 유지한다.
+- Next.js 프로젝트: App Router 또는 Pages Router 중 기존 방식을 유지하고, 서버·클라이언트 Component 경계를 불필요하게 변경하지 않는다.
+- TypeScript 전환, 프레임워크 교체, 상태 관리 교체는 사용자 승인 없이는 하지 않는다.
 
 
 ## Explore
@@ -30,6 +34,7 @@ Use React, JavaScript, Vite, React Router, Zustand, Axios, Tailwind CSS, shadcn/
 ## API Integration
 - 기존 API Client, interceptor, error 처리, 환경변수 구성을 재사용한다.
 - Component 안에 raw API URL이나 환경별 값을 흩어 놓지 않는다.
+- `NEXT_PUBLIC_` 환경변수에는 공개 가능한 값만 사용한다.
 - 기존 응답 타입·에러 형식·인증 처리 규칙을 유지한다.
 - 데이터 기반 UI에서는 필요한 범위에서 loading, empty, validation error, server error, authorization error 상태를 처리한다.
 

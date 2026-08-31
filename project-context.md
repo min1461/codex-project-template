@@ -4,9 +4,12 @@
 > 특별한 이유가 없으면 프로젝트 전체를 다시 탐색하지 않는다.
 
 ## Project
+- 유형: `<platform / customer-site / general>`
 - 목적: `<프로젝트 목적>`
 - 주요 기능: `<핵심 기능 요약>`
 - 서비스 URL: `<URL>`
+
+> `profiles/`의 해당 유형 문서를 복사해 시작할 수 있다. 이 파일의 실제 기술 스택과 명령이 공통 Skill의 예시보다 우선한다.
 
 ## Frontend
 - Framework: `React`
@@ -57,12 +60,14 @@
 
 ## Environment Variables
 ```text
-<ENV_NAME>=<description>
-<ENV_NAME>=<description>
+<PUBLIC_VALUE>=브라우저에 노출되어도 되는 값
+<SECRET_VALUE>=서버 또는 CI/CD secret에만 저장하는 값
 ```
 
 - 로컬 설정 파일: `<.env.local 등>`
 - Production 설정 위치: `<설명>`
+- 실제 비밀값은 커밋하지 않고 `.env.example`에는 변수 이름과 설명만 남긴다.
+- `NEXT_PUBLIC_` 값은 브라우저에 노출되므로 비밀값을 사용하지 않는다.
 
 ## Commands
 

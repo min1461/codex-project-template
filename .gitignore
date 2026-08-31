@@ -1,0 +1,10 @@
+# Local environment secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Certificates and private keys
+*.pem
+*.key

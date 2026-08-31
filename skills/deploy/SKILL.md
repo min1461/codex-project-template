@@ -1,6 +1,6 @@
 ---
 name: deploy
-description: Build, containerize, and deploy the application using Docker, Docker Compose, Nginx, AWS, Cloudflare, GitHub, and GitHub Actions.
+description: Build, containerize, and deploy applications using the project's configured provider, including Docker, AWS, Cloudflare, GitHub, and GitHub Actions.
 ---
 
 # Deploy Skill
@@ -12,9 +12,13 @@ description: Build, containerize, and deploy the application using Docker, Docke
 - 운영에 반영해줘
 - 배포 진행해줘
 
-## Confirmed Technology Baseline
+## Deployment Boundary
 
-Use Docker, Docker Compose, Nginx, AWS EC2, AWS RDS PostgreSQL, Cloudflare, GitHub, and GitHub Actions. Do not introduce Kubernetes without a demonstrated need and explicit user approval.
+`project-context.md`의 배포 대상과 기존 구성을 우선한다. Docker는 실행 환경을 표준화하는 도구이며, 개인 PC를 운영 서버로 사용한다고 가정하지 않는다.
+
+- 플랫폼 프로젝트는 API, 데이터 저장소, 배포 작업을 운영 환경에 둔다.
+- 고객 사이트 프로젝트는 고객 도메인에 독립 배포하고, 운영 플랫폼의 비밀값을 포함하지 않는다.
+- 새로운 클라우드 공급자, 유료 서비스, Kubernetes 도입은 필요성과 비용을 확인한 뒤 사용자 승인을 받는다.
 
 
 ## Pipeline
