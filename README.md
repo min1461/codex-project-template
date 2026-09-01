@@ -119,6 +119,8 @@ Git 보안 정책상 새 PC에서 `git pull`만으로 hook을 자동 활성화�
 - 각 `SKILL.md`: Frontend, UI, Backend, Database, Security, Test, Review, Deploy의 작업별 세부 규칙
 - `.codex/config.toml`: 새 작업과 하위 에이전트의 기본 모델·추론 수준
 
+같은 규칙을 여러 문서에 반복하지 않는다. 일반 구현에는 관련 스킬만 적용하고, `review`와 `deploy`는 검토 또는 명시적인 배포 요청 때만 적용한다.
+
 프로젝트가 특정 기술 스택으로 고정되어 있다면 해당 사실은 범용 `AGENTS.md`가 아니라
 `project-context.md`와 관련 `SKILL.md`에 기록합니다.
 

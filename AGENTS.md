@@ -9,6 +9,7 @@ Codex 토큰 사용량과 불필요한 탐색을 최소화하면서 요청 범�
 - 프로젝트별 기술 스택, 명령, 배포 방식, 고유 규칙은 `project-context.md`를 기준으로 한다.
 - `profiles/`를 사용하는 프로젝트는 먼저 유형에 맞는 프로필을 적용한 뒤 `project-context.md`를 실제 값으로 확정한다.
 - 작업 유형별 세부 구현·검증 규칙은 해당 `SKILL.md`를 적용한다.
+- 공통 원칙은 `AGENTS.md`, 프로젝트별 사실과 명령은 `project-context.md`, 작업별 세부 판단은 해당 `SKILL.md` 한 곳에만 둔다. 같은 규칙을 여러 문서에 반복하지 않는다.
 - 지시가 충돌하거나 제품 동작·데이터·비용·아키텍처에 영향을 주는 선택이 불명확하면 작업 전에 확인한다.
 
 ## Work Context
@@ -64,6 +65,8 @@ Codex 토큰 사용량과 불필요한 탐색을 최소화하면서 요청 범�
 - 테스트/검증 작업 → `skills/testing/SKILL.md`
 - 배포 전 검토 → `skills/review/SKILL.md`
 - 사용자가 `배포해줘`, `deploy 해줘`, `운영에 반영해줘`, `배포 진행해줘`라고 요청 → `skills/deploy/SKILL.md`
+- 일반 구현에서는 요청과 직접 관련된 스킬만 적용한다. `review`는 검토·배포 게이트에서, `deploy`는 명시적인 배포 요청에서만 적용한다.
+- Git commit, push, merge, tag는 사용자의 별도 요청이나 프로젝트 규칙이 있을 때만 수행한다.
 
 ## Deploy Pipeline
 배포는 반드시 다음 순서로 수행한다.
