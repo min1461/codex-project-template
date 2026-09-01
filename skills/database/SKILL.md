@@ -21,6 +21,17 @@ Use PostgreSQL with Spring Data JPA, Hibernate, and Flyway migrations. Default n
 - 테이블·컬럼명, ID, timestamp, enum, soft delete 등은 기존 프로젝트 규칙을 우선한다.
 
 ## Schema and Migration
+- 새 테이블은 아래 명명 규칙을 적용한다. 기존 프로젝트의 명명 규칙이 있으면 그것을 우선한다.
+
+### Table Naming
+- 논리 테이블명은 대문자 스네이크 케이스 `TB_{업무영역}_{대상}` 형식을 사용한다.
+- `TB`는 테이블 고정 접두어이며, 업무영역과 대상 약어는 프로젝트에서 정한 의미를 일관되게 재사용한다.
+- 공통 약어 예시: `COM`(공통), `USER`(유저·회원·관리자), `CD`(코드), `INFO`(정보), `ROLE`(권한).
+- 예시: `TB_COM_CD`, `TB_USER_INFO`, `TB_USER_ROLE`, `TB_ASSET_INFO`.
+- PostgreSQL 물리명과 SQL에는 따옴표 없는 소문자 `snake_case`를 사용한다. 예: `tb_com_cd`, `tb_user_info`, `tb_asset_info`. 대문자 보존을 위한 quoted identifier는 사용하지 않는다.
+- 같은 의미의 약어를 우선 재사용하고, 필요한 의미를 표현할 수 없을 때만 새 약어를 추가한다.
+- 기존 테이블은 이 규칙을 맞추기 위한 목적으로만 이름을 변경하지 않는다.
+
 - 제약 조건, foreign key, unique, nullability, default, index는 데이터 무결성과 실제 조회 패턴에 맞게 검토한다.
 - 스키마 변경은 프로젝트의 버전 관리된 migration 도구와 기존 흐름을 사용한다.
 - 운영 테이블을 수동으로 변경하거나 자동 스키마 변경에 의존하지 않는다.
