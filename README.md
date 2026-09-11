@@ -14,8 +14,8 @@
 ├─ AGENTS.md               # 작업·모델·검증 운영 원칙
 ├─ project-context.md
 ├─ profiles/
-│  ├─ formly-platform/      # 주문·AI·CMS·배포 관리 플랫폼 예시
-│  └─ formly-customer-site/ # 고객 도메인에 독립 배포하는 사이트 예시
+│  ├─ platform/      # 서버 기능·비밀값을 다루는 운영 플랫폼 예시
+│  └─ customer-site/ # 고객 도메인에 독립 배포하는 사이트 예시
 ├─ sync-skills.ps1
 ├─ enable-auto-sync.ps1
 └─ skills/
@@ -56,7 +56,7 @@
 
 전역 스킬 폴더는 PC 공용이라, 이미 설치된 다른 스킬을 프로젝트별로 자동 삭제하지는 않습니다. 프로젝트별 적용 범위는 반드시 `project-context.md`의 `Codex Skills` 목록으로 관리합니다.
 
-Formly처럼 운영 플랫폼과 고객 사이트의 배포 경계가 다른 경우에는 `profiles/`에서 맞는 유형을 골라 해당 `project-context.md`와 `.env.example`를 프로젝트에 복사한 뒤 실제 값으로 채웁니다. 프로필의 값은 출발점이며, 실제 프로젝트의 기존 설정이 우선입니다.
+운영 플랫폼과 고객 사이트의 배포 경계가 다른 경우에는 `profiles/`에서 맞는 유형을 골라 해당 `project-context.md`와 `.env.example`를 프로젝트에 복사한 뒤 실제 값으로 채웁니다. 프로필의 값은 출발점이며, 실제 프로젝트의 기존 설정이 우선입니다.
 
 반드시 프로젝트별로 확인할 항목:
 
