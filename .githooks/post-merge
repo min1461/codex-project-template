@@ -8,6 +8,5 @@ if [ -z "$repo_root" ]; then
 fi
 
 if ! powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$repo_root/sync-skills.ps1"; then
-  echo "CPT Codex skill synchronization failed." >&2
-  exit 1
+  echo "CPT Codex skill synchronization failed. The Git update succeeded; run sync-skills.ps1 manually after resolving the issue." >&2
 fi

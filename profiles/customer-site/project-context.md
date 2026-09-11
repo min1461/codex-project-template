@@ -11,6 +11,7 @@
 
 ## Environment Boundary
 - 사이트 ID, 사이트 원본 URL, 공개 API URL, 공개 기능 설정만 빌드 환경에 둔다.
+- 브라우저 공개 환경변수 접두사는 사용하는 프레임워크 규칙(예: Next.js `NEXT_PUBLIC_`, Vite `VITE_`)을 따른다.
 - AI, 결제, DB, Storage 관리자 키, 배포 토큰을 포함하지 않는다.
 - 고객별 콘텐츠, 템플릿, 도메인, 기능 설정은 운영 플랫폼 데이터에서 관리한다.
 

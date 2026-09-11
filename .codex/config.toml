@@ -1,8 +1,9 @@
-# Default settings for new local Codex work in a project created from this template.
-model = "gpt-5.6-terra"
+# Default settings for local Codex work in a project created from this template.
+# Keep model selection here only; availability may differ by Codex environment.
+model = "gpt-5.6-sol"
 model_reasoning_effort = "medium"
 
 [agents]
-default_subagent_model = "gpt-5.6-terra"
+default_subagent_model = "gpt-5.6-sol"
 default_subagent_reasoning_effort = "medium"
 max_concurrent_threads_per_session = 2

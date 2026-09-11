@@ -11,6 +11,15 @@
 
 > `profiles/`의 해당 유형 문서를 복사해 시작할 수 있다. 이 파일의 실제 기술 스택과 명령이 공통 Skill의 예시보다 우선한다.
 
+## Start Checklist
+- 프로젝트 유형: `<platform / customer-site / general>`
+- Frontend / Backend / Database 사용 여부와 실제 기술: `<확정 전에는 미확정>`
+- 패키지 관리자·빌드 도구·실행 환경: `<확정 전에는 미확정>`
+- 개발·테스트·production build 명령: `<확정 전에는 미확정>`
+- 배포 대상·production branch·health check: `<확정 전에는 미확정>`
+
+위 항목을 실제 값으로 확정하기 전에는 코드 구현이나 환경설정을 시작하지 않는다. 사용하지 않는 영역은 `없음`으로 명시한다.
+
 ## Codex Skills
 - 전역 동기화: `<미확인 / 하지 않음 / 선택 동기화>`
 - 이 프로젝트에서 사용할 스킬: `<frontend, testing 등 / 없음>`
@@ -19,22 +28,22 @@
 새 프로젝트·템플릿 적용 시에는 다른 설정 전에 이 항목을 먼저 사용자와 확인한다. 전역으로 설치되어 있더라도 여기에 없는 스킬 규칙을 이 프로젝트에 자동 적용하지 않는다.
 
 ## Frontend
-- Framework: `React`
-- Language: `JavaScript`
-- UI: `Tailwind CSS + shadcn/ui`
-- State: `Zustand`
-- Package Manager: `npm`
+- Framework: `<예: Next.js / React / 없음>`
+- Language: `<예: TypeScript / JavaScript / 없음>`
+- UI: `<라이브러리 또는 없음>`
+- State: `<상태 관리 방식 또는 없음>`
+- Package Manager: `<예: npm / pnpm / yarn / 없음>`
 
 ## Backend
-- Framework: `Spring Boot 4`
-- Language: `Java 25`
-- Runtime: `JVM / Java 25`
-- Build Tool: `Gradle`
+- Framework: `<예: Spring Boot / Node.js / 없음>`
+- Language: `<예: Java / TypeScript / 없음>`
+- Runtime: `<예: JVM / Node.js / 없음>`
+- Build Tool: `<예: Gradle / Maven / npm / 없음>`
 
 ## Database
-- DBMS: `PostgreSQL`
-- ORM / Mapper: `Spring Data JPA + Hibernate`
-- Migration: `Flyway`
+- DBMS: `<예: PostgreSQL / MySQL / 없음>`
+- ORM / Mapper: `<사용 도구 또는 없음>`
+- Migration: `<사용 도구 또는 없음>`
 
 ## Directory Structure
 ```text
@@ -48,9 +57,9 @@
 ```
 
 ## Authentication
-- 방식: `JWT (Access Token + Refresh Token)`
-- 인증 처리 위치: `Spring Security`
-- 권한 처리: `Spring Security role/permission and ownership checks on the backend`
+- 방식: `<예: 세션 / JWT / OAuth / 없음>`
+- 인증 처리 위치: `<구현 위치 또는 없음>`
+- 권한 처리: `<권한 정책 또는 없음>`
 
 ## Static File Exposure
 - 기본 정책: `<기본 차단 / 공개 허용 목록 방식>`
@@ -83,7 +92,7 @@
 - 로컬 설정 파일: `<.env.local 등>`
 - Production 설정 위치: `<설명>`
 - 실제 비밀값은 커밋하지 않고 `.env.example`에는 변수 이름과 설명만 남긴다.
-- `NEXT_PUBLIC_` 값은 브라우저에 노출되므로 비밀값을 사용하지 않는다.
+- 브라우저 공개 환경변수의 접두사는 사용 프레임워크 규칙을 따른다. 예: Next.js는 `NEXT_PUBLIC_`, Vite는 `VITE_`이며 어느 경우에도 비밀값을 사용하지 않는다.
 
 ## Commands
 
@@ -103,8 +112,8 @@
 ```
 
 ## Production
-- Branch: `main`
-- 배포 방식: `Docker, Docker Compose, Nginx, AWS EC2/RDS, Cloudflare, GitHub Actions`
+- Branch: `<예: main>`
+- 배포 방식: `<예: Docker / 정적 호스팅 / 서버리스 / 없음>`
 
 ### Deploy
 ```bash

@@ -13,7 +13,7 @@
 - Storage: `<object storage provider>`
 
 ## Environment Boundary
-- 공개 웹 설정은 `NEXT_PUBLIC_` 접두사를 사용하며 비밀값을 포함하지 않는다.
+- 공개 웹 설정은 사용하는 프레임워크의 브라우저 공개 접두사(예: Next.js `NEXT_PUBLIC_`, Vite `VITE_`)만 사용하며 비밀값을 포함하지 않는다.
 - AI, 결제, DB, Cache, Storage 자격 증명은 서버 또는 CI/CD Secret에만 저장한다.
 - 고객 사이트의 빌드 환경으로 운영 플랫폼 비밀값을 전달하지 않는다.
 
