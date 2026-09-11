@@ -1,4 +1,4 @@
-# Formly Customer Site Context
+# Customer Site Context
 
 ## Project
 - 유형: `customer-site`
@@ -6,12 +6,12 @@
 - 서비스 URL: `<customer domain>`
 
 ## Technology
-- Frontend: `Next.js + TypeScript`
-- Rendering: 정적 빌드를 기본으로 하며, 동적 기능은 필요한 경우에만 Formly API를 사용한다.
+- Frontend: `<framework + language>`
+- Rendering: 정적 빌드를 기본으로 하며, 동적 기능은 필요한 경우에만 플랫폼 API를 사용한다.
 
 ## Environment Boundary
 - 사이트 ID, 사이트 원본 URL, 공개 API URL, 공개 기능 설정만 빌드 환경에 둔다.
-- OpenAI, 결제, DB, Storage 관리자 키, 배포 토큰을 포함하지 않는다.
+- AI, 결제, DB, Storage 관리자 키, 배포 토큰을 포함하지 않는다.
 - 고객별 콘텐츠, 템플릿, 도메인, 기능 설정은 운영 플랫폼 데이터에서 관리한다.
 
 ## Deployment
